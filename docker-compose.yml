@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mariadb:
+    image: "bitnami/mariadb:latest"
+    volumes:
+      - ./db:/bitnami/mariadb
+      - ./tmp:/docker-entrypoint-initdb.d
+    environment:
+      MARIADB_DATABASE: eqemu
+      MARIADB_USER: eqemu
+      MARIADB_PASSWORD: eqemupass
+      ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"

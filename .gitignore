@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# database snapshot dir for testing
+/db/
+# tmp dir is used for grabbing sql dumps etc
+/tmp/
