@@ -1,5 +1,372 @@
-// Variables
-// --------------------------
+////////// COLOR SYSTEM //////////
+
+$blue: #5E50F9;
+$indigo: #6610f2;
+$purple: #6a008a;
+$pink: #E91E63;
+$red: #f96868;
+$orange: #f2a654;
+$yellow: #f6e84e;
+$green: #46c35f;
+$teal: #58d8a3;
+$cyan: #57c7d4;
+$black: #000;
+$white: #ffffff;
+$white-smoke: #f2f7f8;
+$violet: #41478a;
+$darkslategray : #2e383e;
+$dodger-blue : #3498db;
+
+
+$colors: (blue: $blue,
+indigo: $indigo,
+purple: $purple,
+pink: $pink,
+red: $red,
+orange: $orange,
+yellow: $yellow,
+green: $green,
+teal: $teal,
+cyan: $cyan,
+white: $white,
+gray: #434a54,
+gray-light: #aab2bd,
+gray-lighter: #e8eff4,
+gray-lightest: #e6e9ed,
+gray-dark: #12151e,
+black: #000000);
+
+
+$theme-colors: (primary: #0090e7,
+secondary: #e4eaec,
+success: #00d25b,
+info:  #8f5fe8,
+warning: #ffab00,
+danger: #fc424a,
+light: $white,
+dark: #0d0d0d);
+
+
+
+////////// COLOR SYSTEM //////////
+
+////////// COLOR VARIABLES //////////
+$content-bg: #000000;
+$footer-bg: $content-bg;
+$footer-color: color(dark);
+$border-color: #2c2e33;
+////////// COLOR VARIABLES //////////
+
+////////// SOCIAL COLORS //////////
+
+$social-colors: (twitter: #2caae1,
+facebook: #3b579d,
+google: #dc4a38,
+linkedin: #0177b5,
+pinterest: #cc2127,
+youtube: #e52d27,
+github: #333333,
+behance: #1769ff,
+dribbble: #ea4c89,
+reddit: #ff4500);
+
+////////// SOCIAL COLORS //////////
+
+////////// FONTS//
+
+$type1:     'Rubik', sans-serif;
+
+////////// FONT-WEIGHT/////////
+
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$default-font-size: .875rem; // 14px as base font size
+
+$text-muted: #6c7293;
+$body-color: #ffffff;
+
+////////// FONT VARIABLES //////////
+
+
+///////// CARD ////////
+$card-bg: #191c24;
+$card-description-color: #bfbfbf;
+$card-title-color: #ffffff;
+///////// CARD ////////
+
+
+//////// TABLES ////////
+$table-color: $body-color;
+$table-accent-bg: $content-bg;
+$table-hover-bg: $content-bg;
+$table-cell-padding: .9375rem;
+$table-border-color: $border-color;
+$table-inverse-bg: #2a2b32;
+$table-inverse-color: color(white);
+$table-dark-bg: #212529;
+$table-bg-level: 1;
+//////// TABLES ////////
+
+////////// MODALS VARIABLES //////////
+$modal-content-bg: $content-bg;
+////////// MODALS VARIABLES //////////
+
+///////// NAVBAR ////////
+$navbar-bg: #191c24;
+$navbar-brand-wrapper-tinted-bg: #fa424a;
+$navbar-height: 70px;
+$navbar-menu-color: #ffffff;
+$navbar-font-size: .9375rem;
+$navbar-icon-font-size: 1.125rem;
+
+///////// NAVBAR ////////
+
+////////// SIDEBAR ////////
+$sidebar-width-lg: 244px;
+$sidebar-width-mini: 185px;
+$sidebar-width-icon: 70px;
+
+$sidebar-dark-bg: #191c24;
+$sidebar-dark-menu-color: $text-muted;
+$sidebar-dark-menu-active-bg: darken($sidebar-dark-bg, 5%);
+$sidebar-dark-menu-active-color: #ffffff;
+$sidebar-dark-menu-hover-bg: darken($sidebar-dark-bg, 5%);
+$sidebar-dark-menu-hover-color: color(white);
+$sidebar-dark-submenu-color: $sidebar-dark-menu-color;
+$sidebar-dark-submenu-hover-bg: initial;
+$sidebar-dark-submenu-hover-color: #ffffff;
+$sidebar-dark-menu-icon-color: #bba8bf;
+$sidebar-dark-menu-arrow-color: rgba($text-muted, 0.36);
+
+$sidebar-tinted-bg: #fa424a;
+$sidebar-tinted-menu-color: #ffffff;
+$sidebar-tinted-menu-active-bg: rgba(12, 14, 14, 0.1);
+$sidebar-tinted-menu-hover-bg: rgba(12, 14, 14, 0.1);
+$sidebar-tinted-menu-arrow-color: rgba($sidebar-tinted-menu-color, 0.36);
+
+$sidebar-menu-font-size: 0.9375rem;
+$sidebar-menu-padding-y: 0.8rem;
+$sidebar-menu-padding-x: 1.188rem;
+
+$sidebar-submenu-font-size: 0.855rem;
+$sidebar-submenu-item-padding: 0.5rem 0.35rem;
+
+$sidebar-icon-font-size: 1rem;
+$sidebar-arrow-font-size: .625rem;
+
+$sidebar-profile-bg: transparent;
+$sidebar-profile-padding: .75rem 1.625rem .75rem 1.188rem;
+
+$sidebar-mini-menu-padding: 0.8125rem 1rem 0.8125rem 1rem;
+
+$sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+
+$rtl-sidebar-submenu-padding: 0 1.5rem 0 0;
+
+$icon-only-collapse-width: 190px;
+$icon-only-menu-bg-light: $sidebar-dark-menu-hover-bg;
+$icon-only-menu-bg-dark: $sidebar-dark-menu-hover-bg;
+
+$navbar-box-shadow: 20px 19px 34px -15px rgba(0,0,0,0.5);
+$navbar-box-shadow-rtl: -34px 19px 34px -15px $content-bg;
+
+///////// SIDEBAR ////////
+
+
+
+///////// BUTTONS ////////
+
+$button-fixed-width: 150px;
+$btn-padding-y: .375rem;
+$btn-padding-x: .75rem;
+$btn-line-height: 1;
+
+$btn-padding-y-xs: .5rem;
+$btn-padding-x-xs: .75rem;
+
+$btn-padding-y-sm: .25rem;
+$btn-padding-x-sm: .5rem;
+
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 3rem;
+
+$btn-font-size: 0.9375rem;
+$btn-font-size-xs: 0.625rem;
+$btn-font-size-sm: 0.875rem;
+$btn-font-size-lg: 0.875rem;
+
+$btn-border-radius: .1875rem;
+$btn-border-radius-xs: .1875rem;
+$btn-border-radius-sm: .1875rem;
+$btn-border-radius-lg: .1875rem;
+///////// BUTTONS ////////
+
+
+
+////////// TOOLTIP VARIABLES //////////
+//default styles
+$tooltip-font-size: .75rem;
+$tooltip-padding-y: .4rem;
+$tooltip-padding-x: .75rem;
+$tooltip-border-radius: .375rem;
+////////// TOOLTIP VARIABLES //////////
+$popover-bg: theme-color(dark);
+$popover-border-color: $border-color;
+$popover-arrow-color: $popover-bg;
+$popover-arrow-outer-color: $popover-border-color;
+$popover-header-bg: $popover-bg;
+
+
+
+/////////  FORMS /////////
+$input-bg: #2A3038;
+$input-border-radius: 2px;
+$input-border-color: $border-color;
+$input-placeholder-color: lighten($input-bg, 15%);
+$input-placeholder-font-size: 0.875rem;
+$input-font-size: 0.875rem;
+
+$input-padding-y: 0.56rem;
+$input-padding-x: 0.75rem;
+$input-line-height: 1;
+
+$input-padding-y-xs: .5rem;
+$input-padding-x-xs: .75rem;
+
+$input-padding-y-sm: .50rem;
+$input-padding-x-sm: .81rem;
+
+$input-padding-y-lg: .94rem;
+$input-padding-x-lg: 1.94rem;
+
+$input-height:          2.875rem;
+$input-height-sm:       2.575rem;
+$input-height-lg:       3.175rem;
+///////// FORMS /////////
+
+////////  DROPDOWNS ///////
+$dropdown-bg: $card-bg;
+$dropdown-color: $body-color;
+$dropdown-border-color: $border-color;
+$dropdown-divider-bg: $border-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-bg: darken($card-bg, 3%);
+$dropdown-header-color: $body-color;
+$dropdown-menu-box-shadow: none;
+////////  DROPDOWNS ///////
+
+
+////////  PROGRESSBAR ///////
+$progress-bg: $content-bg;
+////////  PROGRESSBAR ///////
+
+
+////////// MEASUREMENT AND PROPERTY VARIABLES //////////
+$boxed-container-width: 1200px;
+$border-property: 1px solid $border-color;
+$card-spacing-y: 2.5rem;  
+$card-padding-y: 1.75rem;
+$card-padding-x: 1.5625rem;
+$card-border-radius: 0.25rem;
+$grid-gutter-width: 1.5rem;
+$action-transition-duration: 0.25s;
+$action-transition-timing-function: ease;
+$border-width: 1px;
+////////// OTHER VARIABLES //////////
+
+
+
+////////// BREAD CRUMBS VARIABLES //////////
+// default styles
+$breadcrumb-padding-y: 0.56rem;
+$breadcrumb-padding-x: 1.13rem;
+$breadcrumb-item-padding: .5rem;
+$breadcrumb-margin-bottom: 1rem;
+$breadcrumb-font-size: $default-font-size;
+$breadcrumb-bg: transparent;
+$breadcrumb-border-color: $border-color;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color: $gray-700;
+$breadcrumb-divider: "/";
+
+// custom styles
+$breadcrumb-custom-padding-y: 0;
+$breadcrumb-custom-padding-x: 0;
+$breadcrumb-custom-item-padding-y: 0.56rem;
+$breadcrumb-custom-item-padding-x: 10px;
+$breadcrumb-custom-item-color: #FFFFF0;
+$breadcrumb-item-bg: #141414;
+////////// BREAD CRUMBS VARIABLES //////////
+
+
+
+////////// MODALS VARIABLES //////////
+$modal-inner-padding: 0.9375rem;
+$modal-dialog-margin: 10px;
+$modal-dialog-margin-y-sm-up: 30px;
+$modal-title-line-height: $line-height-base;
+$modal-content-box-shadow-xs: 0 3px 9px rgba($black, .5);
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black, .5);
+
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: .5;
+
+$modal-header-border-color: $border-color;
+$modal-content-border-color: $border-color;
+$modal-footer-border-color: $border-color;
+
+$modal-header-border-width: $border-width;
+$modal-content-border-width: $border-width;
+$modal-footer-border-width: $border-width;
+
+$modal-header-padding-x: 26px;
+$modal-header-padding-y: 25px;
+
+$modal-body-padding-x: 26px;
+$modal-body-padding-y: 35px;
+
+$modal-footer-padding-x: 31px;
+$modal-footer-padding-y: 15px;
+
+$modal-lg: 90%;
+$modal-md: 500px;
+$modal-sm: 300px;
+$modal-transition: transform .4s ease;
+////////// MODALS VARIABLES //////////
+
+
+/////////  PAGINATION VARIABLES //////////
+$pagination-bg: $content-bg;
+/////////  PAGINATION VARIABLES //////////
+
+
+/////////  TABS VARIABLES //////////
+$nav-tabs-border-color: $border-color;
+$nav-tabs-link-bg: $content-bg;
+$nav-tabs-link-color: $body-color;
+$nav-tabs-link-hover-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color: $body-color;
+$nav-tabs-link-active-bg: darken($content-bg, 5%);
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
+$nav-pills-custom-bg: #8489ab;
+////////   TABS VARIABLES /////////
+
+///////// SETTINGS PANEL ////////
+$settings-panel-width: 300px;
+///////// SETTINGS PANEL ////////
+
+////////   CALENDAR  //////////////
+$fullcalendar-color: #a8b2b9;
+////////   CALENDAR  //////////////
+
+////////   MISC  //////////////
+$page-title-color: $body-color;
+////////   MISC  //////////////
+
+
 
 $xa-font-path:        "/assets/font" !default;
 $xa-version:          "0.1.0" !default;
@@ -504,431 +871,3 @@ $xa-var-icon-all-for-one: "\eaec";
 $xa-var-icon-alien-fire: "\eaed";
 $xa-var-icon-acorn: "\eaee";
 $xa-var-icon-acid: "\eaef";
-
-
-
-
-// GENERAL LAYOUT VARIABLES
-// ============================================
-$standalone-color-scheme    : true !default;
-
-
-
-// Fonts
-// --------------------------------------------
-$font-family-base           : 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-size-base             : 13px;
-$font-semibold              : 600;
-
-
-// Default background and text color
-// --------------------------------------------
-$body-bg                    : #ecf0f5;
-$body-color                 : #7a878e;
-$body-main-color            : #4d627b;
-
-
-// Boxed layout
-// --------------------------------------------
-$boxed-top-margin           : 45px;
-$boxed-btm-margin           : 0;
-$boxed-width                : 1128px;
-$boxed-width-hd             : 1280px; // Max boxed width for monitors support more than 1920x1200 resolution.
-$boxed-bg                   : #637a8b;
-$boxed-bg-img               : 'none'; // Set the boxed background image. EX: '../img/landscape.jpg';
-
-
-// Links color
-// --------------------------------------------
-$link-color                 : $body-color;
-$link-hover-color           : darken($body-color, 5%);
-
-
-// Border and grid gutter
-// --------------------------------------------
-$border-color-base          : rgba(0,0,0,.07);
-$border-radius-base         : 3px;
-$grid-gutter-width          : 20px;
-
-
-// Components Active State
-// --------------------------------------------
-$state-active-bg            : #1976d2;
-$state-active-color         : #fff;
-
-
-// Text Selections
-// --------------------------------------------
-$selection-bg               : $state-active-bg;
-$selection-color            : $state-active-color;
-
-
-
-
-// CLEAN ZONE (LOGIN, REGISTER, AND ERROR PAGES CONTAINER)
-//============================================
-$cls-bg                     : $body-bg;
-$cls-color                  : $body-main-color;
-
-
-
-
-// NAVIGATION
-//============================================
-$mainnav-bg                 : #263238;
-$mainnav-color              : #abb1b7;
-$mainnav-hover-color        : $state-active-color;
-$mainnav-active-bg          : transparent;
-$mainnav-active-color       : #fff;
-$mainnav-active-state       : $state-active-bg;
-$mainnav-lg-width           : 220px;
-$mainnav-sm-width           : 55px;
-$mainnav-profile-img        : 'none'; //'../img/nav-profile.png'; // Disabled the background image by add 'none' to the value.
-$mainnav-profile-bg         : $mainnav-bg;
-$mainnav-profile-color      : $mainnav-color;
-
-
-// Reduce the file size by disabling features that you do not use.
-$mainnav-collapse           : true;
-$mainnav-slide              : true;
-$mainnav-reveal             : true;
-
-
-
-
-// NAVBAR
-//============================================
-$navbar-bg                  : #fff;
-$navbar-color               : $body-color;
-$brand-bg                   : transparent;
-$brand-bg-overlay           : $mainnav-bg;
-$brand-color                : $state-active-color;
-$brand-color-overlay        : $navbar-color;
-$brand-font-size            : 19px;
-$navbar-height              : 59px;
-
-
-
-
-// ASIDE
-//============================================
-$aside-width                : 255px;
-$aside-dark-bg              : #34495e;
-$aside-dark-color           : #ffffff;
-$aside-bright-bg            : #ffffff;
-$aside-bright-color         : $body-color;
-$aside-tabs                 : true;
-
-
-
-
-// CONTENT - FIXEDBAR (AN ADDITIONAL SIDEBAR)
-// ============================================
-$fixedbar                   : true;
-$fixedbar-width             : 240px;
-$fixedbar-bg                : #fff;
-$fixedbar-color             : $body-color;
-
-
-
-
-
-// FOOTER
-//============================================
-$footer-bg                  : lighten($body-bg, 5%);
-$footer-color               : $body-main-color;
-
-
-
-
-// ANIMATION
-//============================================
-$enable-animation           : true;
-$enable-easeInQuart         : true;
-$enable-easeOutQuart        : true;
-$enable-easeInBack          : true;
-$enable-easeOutBack         : true;
-$enable-easeInOutBack       : true;
-$enable-steps               : true;
-$enable-jumping             : true;
-$enable-rubber              : true;
-
-
-// Animation duration
-// --------------------------------------------
-$ease-duration              : .35s;
-$easeInQuart                : .35s;
-$easeOutQuart               : .5s;
-$easeInBack                 : .35s;
-$easeOutBack                : .35s;
-$easeInOutBack              : .5s;
-$steps                      : .5s;
-$jumping                    : .7s;
-$rubber                     : .5s;
-
-
-
-
-
-// COMPONENTS
-//============================================
-// Reduce the file size by disabling the color of the components that you do not use.
-// --------------------------------------------
-$enable-mint                : true;
-$enable-purple              : true;
-$enable-pink                : true;
-$enable-dark                : true;
-
-
-// Background Colors
-// --------------------------------------------
-$light-bg                   : #ffffff;
-$gray-bg                    : #e9eeef;
-$primary-bg                 : $state-active-bg;
-$info-bg                    : #03a9f4;
-$success-bg                 : #8bc34a;
-$warning-bg                 : #ffb300;
-$danger-bg                  : #f44336;
-$mint-bg                    : #26a69a;
-$purple-bg                  : #ab47bc;
-$pink-bg                    : #f06292;
-$dark-bg                    : #3a444e;
-
-
-// Text Colors
-// --------------------------------------------
-$text-muted                 : lighten($body-color, 10%);
-$light-color                : $body-color;
-$gray-color                 : $body-color;
-$primary-color              : $state-active-color;
-$info-color                 : #ffffff;
-$success-color              : #ffffff;
-$warning-color              : #ffffff;
-$danger-color               : #ffffff;
-$mint-color                 : #ffffff;
-$purple-color               : #ffffff;
-$pink-color                 : #ffffff;
-$dark-color                 : #ffffff;
-
-
-
-
-
-
-
-// OVERWRITE BOOTSTRAP COMPONENT
-// ============================================
-// Please disabled components that you do not use.
-
-$table                      : true;
-$form-control               : true;
-$nav-pills                  : true;
-$list-group                 : true;
-$label                      : true;
-$badge                      : true;
-$breadcrumb                 : true;
-$alert                      : true;
-$modal                      : true;
-$popover                    : true;
-$dropdown                   : true;
-$well                       : true;
-$progressbar                : true;
-$pager                      : true;
-$pagination                 : true;
-$carousel                   : true;
-$accordion                  : true;
-$tabs                       : true;
-$bg                         : true;
-$txt                        : true;
-
-
-// Components State
-// --------------------------------------------
-$state-success              : darken($success-bg, 10%);
-$state-warning              : darken($warning-bg, 10%);
-$state-danger               : darken($danger-bg, 10%);
-
-
-// Tooltip
-// --------------------------------------------
-$tooltip                    : true;
-$tooltip-bg                 : $dark-bg;
-
-
-// Buttons
-// --------------------------------------------
-$buttons                    : true;
-$include-btn-hover          : true;
-$include-btn-active         : true;
-$include-btn-labeled        : true;
-$include-btn-circle         : true;
-$include-btn-icon           : true;
-$include-btn-rounded        : true;
-
-
-// Panels
-// --------------------------------------------
-$panels                     : true;
-$panel-default-head-color   : $body-main-color;
-$panel-heading-height       : 42px;
-$panel-w-tabs               : true;
-$panel-w-progressbar        : true;
-$panel-w-pagination         : true;
-$panel-w-pager              : true;
-$panel-w-btn                : true;
-
-
-
-
-
-
-
-// EXTRA COMPONENTS
-// ============================================
-$megamenu                   : true;
-$invoice                    : true;
-$file-manager               : true;
-$tasklist                   : true;
-$comments                   : true;
-$blog                       : true;
-$pricing-tables             : true;
-
-
-
-// Chat
-// --------------------------------------------
-$chat                       : true;
-$chat-bg                    : #d6dbe0;
-$chat-primary-speech-bg     : $info-bg;
-$chat-primary-speech-color  : #ffffff;
-$chat-secondary-speech-bg   : #ffffff;
-$chat-secondary-speech-color: #575757;
-
-
-
-
-// Timeline
-// --------------------------------------------
-$timeline                   : true;
-$timeline-bg                : #fff;
-$timeline-color             : $body-color;
-$timeline-border-color      : rgba(0,0,0,.1);
-
-
-
-
-// Email
-// --------------------------------------------
-$email                      : true;
-$email-list-odd             : rgba(0, 0, 0, 0.01);
-$email-list-hover           : rgba(0, 0, 0, 0.05);
-$email-highlight            : #f2f0c2;
-$email-stared-color         : #ffa100;
-$email-stared-hover         : lighten($email-stared-color,15%);
-$email-unstared-color       : #d3d7da;
-
-
-
-
-// Form Wizard
-// --------------------------------------------
-$form-wizard                : true;
-$include-form-wizard-classic: true;
-$include-form-wizard-steps  : true;
-
-
-
-
-// Toggle Switch Plugin Stylesheet
-// --------------------------------------------
-$toggle-switch                              : true;
-$toggle-switch-container-width              : 30px;
-$toggle-switch-container-height             : 16px;
-$toggle-switch-container-border-width       : 0;
-$toggle-switch-container-bg                 : #afafaf;
-$toggle-switch-container-bg-checked         : $success-bg;
-$toggle-switch-container-border-color       : transparent;
-$toggle-switch-container-box-shadow         : 0;
-$toggle-switch-container-transition-duration: .3s;
-$toggle-switch-button-margin                : 1px;
-$toggle-switch-button-bg                    : #fff;
-$toggle-switch-button-box-shadow            : 0 2px 5px 0 fade(#333, 25%);
-$toggle-switch-button-transition-duration   : .3s;
-$toggle-switch-label-margin-left            : 10px;
-$toggle-switch-label-margin-right           : 0;
-$toggle-switch-opacity-disabled             : 0.3;
-
-
-
-
-// Magic check (Checkbox and radio) plugins
-// --------------------------------------------
-$magic-check                : true;
-$magic-material-style       : true;
-$magic-radio-size           : 17px;
-$magic-checkbox-size        : 17px;
-$magic-dot-size             : 9px;
-$magic-main-color           : $state-active-bg;
-$magic-border-color         : rgba(0,0,0,0.15);
-
-
-
-
-// 3RD PARTY PLUGINS
-//============================================
-$nestable-list              : true;
-$jstree                     : true;
-$xeditable                  : true;
-$full-calendar              : true;
-$select2                    : true;
-$chosen                     : true;
-$bootstrap-select           : true;
-$bootstrap-timepicker       : true;
-$summernote                 : true;
-$bootstrap-markdown         : true;
-$datatable                  : true;
-$datepicker                 : true;
-$noui-slider                : true;
-$switchery                  : true;
-
-
-
-
-
-// GLOBAL MIXINS
-// ============================================
-// Transform
-// --------------------------------------------
-@mixin transform($transform){
-    -webkit-transform: $transform;
-    transform: $transform;
-}
-
-
-// Transitions
-// --------------------------------------------
-@mixin transition($transition...){
-    transition: $transition;
-}
-
-
-
-// Selection
-// --------------------------------------------
-@mixin selection {
-  ::selection {@content;}
-  ::-moz-selection {@content;}
-}
-
-
-
-// Placeholder
-// --------------------------------------------
-@mixin placeholder {
-    @at-root{
-       #{&}::placeholder { @content;}
-       #{&}::-webkit-input-placeholder { @content;}
-       #{&}::-ms-input-placeholder { @content;}
-       #{&}:-ms-input-placeholder { @content;}
-    }
-}

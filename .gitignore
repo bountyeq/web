@@ -25,3 +25,9 @@ assets/patch
 
 # conf file ignore
 web.conf
+
+node_modules/
+.bash_history
+npm-debug.log
+.npm/
+.config/
