@@ -1,0 +1,53 @@
+{{ define "body" }}
+<body>
+{{ template "navbar" .}}
+<div class="callout"></div>
+<div class="grid">
+<!-- Breadcrumbs -->
+<ul class="breadcrumbs">
+<li><a>Database</a></li>
+</ul>
+	 
+<div class="col_12">
+	<div class="col_9">
+	<table class="striped tight sortable">	
+	<tbody>
+		<tr><td><a href="/bestiary">Bestiary By Zone</a></td></tr>
+		<tr><td><a href="/zone">Zone List</a></td></tr>
+		<tr><td><a href="/item">Item Search</a></td></tr>
+	</tbody>
+	</table>
+	</div>
+	{{ template "side-board" .}}	
+	
+	<hr />
+	
+	<div class="col_3">
+	<h4>Column</h4>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
+	</div>
+	
+	<div class="col_3">
+	<h4>Column</h4>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
+	</div>
+	
+	<div class="col_3">
+	<h4>Column</h4>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
+	</div>
+	
+	<div class="col_3">
+	<h4>Column</h4>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
+	</div>
+</div>
+
+</div><!-- END GRID -->
+{{ template "footer" .}}
+</body>
+{{ end }}

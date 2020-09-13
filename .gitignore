@@ -18,3 +18,10 @@
 /db/
 # tmp dir is used for grabbing sql dumps etc
 /tmp/
+
+
+# patch ignore
+assets/patch
+
+# conf file ignore
+web.conf

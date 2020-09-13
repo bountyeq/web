@@ -1,0 +1,30 @@
+{{ define "body" }}
+<body>
+{{ template "navbar" .}}
+<div class="callout"></div>
+<div class="grid">
+<!-- Breadcrumbs -->
+<ul class="breadcrumbs">
+<li><a href="/database/">Database</a></li>
+<li><a href="/bestiary/">Bestiary</a></li>
+<li><a>{{.Npc.Name}}</a></li>
+</ul>
+	 
+<div class="col_12">
+	<div class="col_9">
+	<h3>{{.Npc.Name}}</h3>
+	<p><img class="align-left" src="http://placehold.it/180x150/4D99E0/ffffff.png&text=180x150" width="180" height="150" />
+	404 not found
+	</div>
+	
+	{{ template "side-board" .}}
+	
+	<hr />
+	
+	
+</div>
+
+</div><!-- END GRID -->
+{{ template "footer" .}}
+</body>
+{{ end }}

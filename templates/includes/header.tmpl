@@ -1,0 +1,49 @@
+{{ define "header" }}
+<!--HEADER-->
+<header id="top-head" class="uk-position-fixed" {{if eq .Site.IsLoggedIn false}}style="left: 0px"{{end}}>
+    <div class="uk-container uk-container-expand uk-background-primary">
+        <nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
+            <div class="uk-navbar-left">
+                <div class="uk-navbar-item uk-hidden@m">
+                    <a class="uk-logo" href="#"><img class="custom-logo" src="/assets/img/dashboard-logo-white.svg" alt=""></a>
+                </div>
+                <ul class="uk-navbar-nav uk-visible@m">
+                    <li><a href="#">BountyEQ</a></li>
+                    <li>
+                        <a href="#">Database <span data-uk-icon="icon: triangle-down"></span></a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="/player/"><i class="xa xa-player"></i> Players</a></li>
+                                <li><a href="/forum/"><i class="xa xa-torch"></i> Forum</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/bestiary/"><i class="xa xa-gecko"></i> Bestiary</a></li>                                
+                                <li><a href="/item/"><i class="xa xa-vial"></i> Items</a></li>                                
+                                <li><a href="/spell/"><i class="xa xa-flame-symbol"></i> Spells</a></li>
+                                <li><a href="/zone/"><i class="xa xa-metal-gate"></i> Zones</a></li>                                
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="uk-navbar-item uk-visible@s">
+                    <form action="/search" class="uk-search uk-search-default">
+                        <span data-uk-search-icon></span>
+                        <input class="uk-search-input search-field" type="search" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">                
+                    {{if eq .Site.IsLoggedIn true}}<li><a href="/account/profile" data-uk-icon="icon:user" title="Your profile" data-uk-tooltip></a></li>
+                    <li><a href="/account/settings" data-uk-icon="icon: settings" title="Settings" data-uk-tooltip></a></li>
+                    <li><a href="/account/logout" data-uk-icon="icon:  sign-out" title="Log Out" data-uk-tooltip></a></li>
+                    {{else}}
+                    <li><a href="/account/login" data-uk-icon="icon:  sign-in" title="Log In" data-uk-tooltip></a></li>
+                    {{end}}
+                    {{/*<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav" title="Offcanvas" data-uk-tooltip></a></li>*/}}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--/HEADER-->
+{{ end }}

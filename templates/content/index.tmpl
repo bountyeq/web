@@ -1,0 +1,64 @@
+{{ define "body" }}
+<body>
+{{ template "navbar" .}}
+<div class="callout"></div>
+<div class="grid">
+<!-- Breadcrumbs -->
+<ul class="breadcrumbs">
+<li><a href="/database/">Database</a></li>
+<li><a href="/bestiary/">Bestiary</a></li>
+<li><a>{{.Npc.Name}}</a></li>
+</ul>
+	 
+<div class="col_12">
+	<div class="col_9">
+	<h3>{{.Npc.Name}}</h3>
+	<p><img class="align-left" src="http://placehold.it/180x150/4D99E0/ffffff.png&text=180x150" width="180" height="150" />
+	{{.Description}}
+	</div>
+	
+	{{ template "side-board" .}}
+	
+	<hr />
+	
+	<div class="col_3">
+	<h4>Stats</h4>
+	<table class="striped tight sortable">
+	<tbody>
+		<tr><td>Level: {{.Npc.Level}}</tr>
+		<tr><td>HP: {{.Npc.Hp}}, Regen: {{.Npc.HpRegenRate}}</td></tr>
+		<tr><td>Damage: {{.Npc.Mindmg}}-{{.Npc.Maxdmg}}</td></tr>
+		<tr><td>Class: <i class="xa {{.Npc.ClassIcon}}"></i> {{.Npc.ClassName}}</td></tr>
+		<tr><td>Race: <i class="xa {{.Npc.RaceIcon}}"></i> {{.Npc.RaceName}}</td></tr>	
+	</tbody>
+	</table>
+	</div>
+
+	<div class="col_4">
+	<h4>Items</h4>
+	<table class="striped tight sortable">
+	<tbody>
+		{{range .Items}}
+		<tr><td></td><td><a href="/spell/{{.ID}}">{{.Name}}</a></td></tr>
+		{{end}}	
+	</tbody>
+	</table>
+	</div>
+	
+	<div class="col_5">
+	<h4>Spells</h4>
+	<table class="striped tight sortable">
+	<tbody>
+		{{range .Spells}}
+		<tr><td></td><td><a href="/spell/{{.ID}}">{{.Name.String}}</td><td>{{.Summary}}</a></td></tr>
+		{{end}}		
+	</tbody>
+	</table>
+	</div>	
+	
+</div>
+
+</div><!-- END GRID -->
+{{ template "footer" .}}
+</body>
+{{ end }}
