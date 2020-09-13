@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Dashboard - UIkit 3 KickOff</title>
-		<!-- CSS FILES -->
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@latest/dist/css/uikit.min.css">
-		<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
-		<link rel="stylesheet" type="text/css" href="/assets/css/bountyeq.css">
+		<title>Site</title>		
+		<link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="/assets/css/vendor.bundle.base.css">
+		<link rel="stylesheet" href="/assets/css/web.css">
 		<link rel="apple-touch-icon" sizes="57x57" href="/assets/icon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/assets/icon/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="/assets/icon/apple-icon-72x72.png">
@@ -26,17 +25,46 @@
 		<meta name="msapplication-TileImage" content="/assets/icon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 	</head>
-	<body>
 
-		{{ template "header" .}}
-		{{if eq .Site.IsLoggedIn true}}{{ template "leftbar" .}}{{end}}
-		{{ template "content" .}}
-		{{/* template "offcanvas" .*/}}
+
+
+	<body>
+    <div class="container-scroller">
+	
+		{{ template "leftbar" .}}
+    	{{ template "header" .}}	
 		
-		<!-- JS FILES -->
-		<script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit-icons.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-		<script src="/assets/js/chartScripts.js"></script>
-	</body>
+        <div class="main-panel">	
+		{{ template "content" .}}
+		<!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">MIT Copyright © 2020 <a href="https://github.com/bountyeq/web" target="_blank">BountyEQ</a>. All rights reserved.</span>
+              <span class="text-muted float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="xa xa-hearts text-danger"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/assets/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+  </body>
 </html>
