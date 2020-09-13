@@ -13,6 +13,7 @@ import (
 
 	//"github.com/bountyeq/web/dao"
 	"github.com/bountyeq/web/bestiary"
+	"github.com/bountyeq/web/bounty"
 	"github.com/bountyeq/web/character"
 	"github.com/bountyeq/web/config"
 	"github.com/bountyeq/web/site"
@@ -91,12 +92,14 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"Title": "BountyEQ",
+			"Site":  site.Fetch(),
 		})
 	})
 
 	r.NoRoute(func(c *gin.Context) {
 		c.HTML(http.StatusOK, "404.tmpl", gin.H{
 			"Title": "BountyEQ",
+			"Site":  site.Fetch(),
 		})
 	})
 
@@ -122,11 +125,8 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 	})
 
 	bountyGroup := r.Group("/bounty")
-	bountyGroup.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "bounty_list.tmpl", gin.H{
-			"Title": "Bounty Board",
-		})
-	})
+	bountyGroup.GET("/", bounty.List)
+	bountyGroup.GET("/:id", bounty.List)
 
 	/*authorized := r.Group("/account")
 	authorized.Use(AuthRequired()) {

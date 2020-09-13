@@ -1,53 +1,42 @@
-{{ define "body" }}
-<body>
-{{ template "navbar" .}}
-<div class="callout"></div>
-<div class="grid">
-<!-- Breadcrumbs -->
-<ul class="breadcrumbs">
-<li><a>Database</a></li>
-</ul>
-	 
-<div class="col_12">
-	<div class="col_9">
-	<table class="striped tight sortable">	
-	<tbody>
-		<tr><td><a href="/bestiary">Bestiary By Zone</a></td></tr>
-		<tr><td><a href="/zone">Zone List</a></td></tr>
-		<tr><td><a href="/item">Item Search</a></td></tr>
-	</tbody>
-	</table>
-	</div>
-	{{ template "side-board" .}}	
-	
-	<hr />
-	
-	<div class="col_3">
-	<h4>Column</h4>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-	</div>
-	
-	<div class="col_3">
-	<h4>Column</h4>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-	</div>
-	
-	<div class="col_3">
-	<h4>Column</h4>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-	</div>
-	
-	<div class="col_3">
-	<h4>Column</h4>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis</p>
-	</div>
-</div>
-
-</div><!-- END GRID -->
-{{ template "footer" .}}
-</body>
+{{ define "content" }}
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Bounty List </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Database</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Bounty</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-description">Use search to look for specific creatures</p>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> Info </th>
+                            <th> Name </th>
+                            <th> Summary </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {{ range .Npcs}}
+                          <tr>
+                            <td class="py-1" width="50px"><a href="/bounty/{{.ID}}"><i class="text-success">{{.Level}}</i> <i class="xa {{.RaceIcon}}"></i><i class="xa {{.ClassIcon}} text-danger"></i></a></td>
+                            <td><a href="/bounty/{{.ID}}">{{.Name}}</a></td>
+                            <td>Brief summary</td>
+                            </a>
+                        {{end}}                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>          
 {{ end }}

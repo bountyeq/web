@@ -1,0 +1,125 @@
+{{ define "content" }}
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true" {{if eq .Site.IsLoggedIn false}}style="margin-left: 0px"{{end}}>
+	<div class="uk-container uk-container-expand uk-light">
+		
+		<ul class="uk-breadcrumb">
+    <li><a href="/bestiary">Bestiary</a></li>
+    <li><a>{{.Npc.Name}}</a></li>
+</ul>
+		
+		<div class="uk-grid uk-grid-divider uk-grid-medium uk-child-width-1-2 uk-child-width-1-4@l uk-child-width-1-5@xl" data-uk-grid>
+			<div>
+				<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary"></span>New Users</span>
+				<h1 class="uk-heading-primary uk-margin-remove  uk-text-primary">2.134</h1>
+				<div class="uk-text-small">
+					<span class="uk-text-success" data-uk-icon="icon: triangle-up">15%</span> more than last week.
+				</div>
+			</div>
+			<div>
+				
+				<span class="uk-text-small"><span data-uk-icon="icon:social" class="uk-margin-small-right uk-text-primary"></span>Social Media</span>
+				<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">8.490</h1>
+				<div class="uk-text-small">
+					<span class="uk-text-warning" data-uk-icon="icon: triangle-down">-15%</span> less than last week.
+				</div>
+				
+			</div>
+			<div>
+				
+				<span class="uk-text-small"><span data-uk-icon="icon:clock" class="uk-margin-small-right uk-text-primary"></span>Traffic hours</span>
+				<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">12.00<small class="uk-text-small">PM</small></h1>
+				<div class="uk-text-small">
+					<span class="uk-text-success" data-uk-icon="icon: triangle-up"> 19%</span> more than last week.
+				</div>
+				
+			</div>
+			<div>
+				
+				<span class="uk-text-small"><span data-uk-icon="icon:search" class="uk-margin-small-right uk-text-primary"></span>Week Search</span>
+				<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">9.543</h1>
+				<div class="uk-text-small">
+					<span class="uk-text-danger" data-uk-icon="icon: triangle-down"> -23%</span> less than last week.
+				</div>
+				
+			</div>
+			<div class="uk-visible@xl">
+				<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary"></span>Lorem ipsum</span>
+				<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">5.284</h1>
+				<div class="uk-text-small">
+					<span class="uk-text-success" data-uk-icon="icon: triangle-up"> 7%</span> more than last week.
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="uk-grid uk-grid-medium" data-uk-grid>
+			
+			<!-- panel -->
+			<div class="uk-width-2-3@l">
+				<div class="uk-card uk-card-default uk-card-small uk-background-secondary">
+					<div class="uk-card-header">
+						<div class="uk-grid uk-grid-small">
+							<div class="uk-width-expand"><h4>{{.Npc.Name}} Information</h4></div>
+							
+						</div>
+					</div>
+					<div class="uk-card-body">
+						<div class="chart-container">
+							{{.Description}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /panel -->
+			<!-- panel -->
+			<div class="uk-width-1-3@l">
+				<div class="uk-card uk-card-default uk-card-small uk-card-hover">
+					<div class="uk-card-header">
+						<div class="uk-grid uk-grid-small">
+							<div class="uk-width-expand"><h4>Spawn Info</h4></div>
+							<div class="uk-width-auto uk-text-right panel-icons">
+							</div>
+						</div>
+					</div>
+					<div class="uk-card-body">
+						<div class="chart-container">
+							Spawn goes here
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /panel -->
+			<div class="uk-flex uk-flex-center">
+				<div class="uk-card uk-card-default uk-card-body uk-card-hover">
+					<ul class="uk-list">
+						<li>Level: {{.Npc.Level}}</li>
+						<li>HP: {{.Npc.Hp}}, Regen: {{.Npc.HpRegenRate}}</li>
+						<li>Damage: {{.Npc.Mindmg}}-{{.Npc.Maxdmg}}</li>
+						<li>Class: <i class="xa {{.Npc.ClassIcon}}"></i> {{.Npc.ClassName}}</li>
+						<li>Race: <i class="xa {{.Npc.RaceIcon}}"></i> {{.Npc.RaceName}}</li>	
+					</ul>
+				</div>
+				<div class="uk-card uk-card-default uk-card-body  uk-card-hover uk-margin-left">
+					<ul class="uk-list">
+						{{range .Items}}
+							<li><a href="/item/{{.ID}}">{{.Name}}</a></li>
+						{{end}}	
+					</ul>
+				</div>
+				<div class="uk-card uk-card-default uk-card-body  uk-card-hover uk-margin-left">
+					<ul class="uk-list">
+						{{range .Spells}}
+							<li><a href="/spell/{{.ID}}">{{.Name.String}}{{.Summary}}</a></li>
+						{{end}}	
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<footer class="uk-section uk-section-small uk-text-center">
+			<hr>
+			<p class="uk-text-small uk-text-center">Copyright 2019 - <a href="https://github.com/zzseba78/Kick-Off">Created by KickOff</a> | Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a> </p>
+		</footer>
+	</div>
+</div>
+<!-- /CONTENT -->
+{{ end }}
