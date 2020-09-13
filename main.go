@@ -70,6 +70,7 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 
 	c := make(chan os.Signal, 1)
 	r := gin.Default()
+
 	//gin.DefaultWriter = log
 	r.Use(logger.SetLogger(logger.Config{
 		Logger:         &log,
@@ -132,7 +133,10 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 	authorized.Use(AuthRequired()) {
 		authorauthorized.POST("/login", loginEndpoint)
 	}*/
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	if !cfg.IsDevMode {
+		gin.SetMode(gin.ReleaseMode)
+	}
+	r.Run(cfg.Host)
 	s := <-c
 	fmt.Println("Got signal:", s)
 	cancel()

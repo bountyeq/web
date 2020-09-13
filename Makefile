@@ -8,7 +8,9 @@ db-up:
 	@# I delete tmp/ so that the initializer scripts don't happen again
 	@-rm -rf tmp/
 	@docker-compose up -d
-
+.PHONY: build-linux
+build-linux:
+	@GOOS=linux GOARCH=amd64 go build -o bin/web-linux-${VERSION}x64
 .PHONY: db-init
 db-init:
 	@echo "Priming a fresh database"
@@ -55,3 +57,8 @@ scss:
 .PHONY: npm-install
 npm-install:
 	@(docker run --rm -v ${PWD}:/src -it xackery/webbuild:10.19.0 bash -c 'npm install')
+.PHONY: sync
+sync: build-linux
+	@rsync -ru assets/ dungeoneq.com:~/server/web/assets/
+	@rsync -ru templates/ dungeoneq.com:~/server/web/templates/
+	@scp bin/web-linux-x64 dungeoneq.com:~/server/web

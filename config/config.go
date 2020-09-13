@@ -18,7 +18,9 @@ var ContentDB *gorm.DB
 
 // Config wraps all configuration options
 type Config struct {
-	Debug           bool     `toml:"debug" desc:"Enable debug mode"`
+	IsDebugMode     bool     `toml:"debug" desc:"Enable debug mode"`
+	IsDevMode       bool     `toml:"dev" desc:"Run in deveopment mode"`
+	Host            string   `toml:"host" desc:"host to listen on, e.g. :80"`
 	Database        Database `toml:"database" desc:"database"`
 	ContentDatabase Database `toml:"content_database" desc:"database"`
 }
@@ -95,7 +97,7 @@ func New() (*Config, error) {
 	}
 
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
-	if cfg.Debug {
+	if cfg.IsDebugMode {
 		zerolog.SetGlobalLevel(zerolog.DebugLevel)
 	}
 
@@ -109,6 +111,7 @@ func New() (*Config, error) {
 
 func getDefaultConfig() *Config {
 	cfg := Config{}
+	cfg.Host = ":80"
 	cfg.Database.Database = "eqemu"
 	cfg.Database.Username = "eqemu"
 	cfg.Database.Password = "eqemupass"

@@ -18,7 +18,7 @@
 /db/
 # tmp dir is used for grabbing sql dumps etc
 /tmp/
-
+/bin/
 
 # patch ignore
 assets/patch
