@@ -1,4 +1,4 @@
-VERSION: 0.1.0
+VERSION := 0.1.0
 .PHONY: sandbox
 sandbox:
 	@# if this fails use go get -u github.com/cosmtrek/air

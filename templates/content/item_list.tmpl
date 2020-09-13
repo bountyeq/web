@@ -1,0 +1,44 @@
+{{ define "content" }}
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Bestiary List </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Database</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Bestiary</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-description">Use search to look for specific creatures</p>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> Info </th>
+                            <th> Image </th>
+                            <th> Name </th>                            
+                            <th> Summary </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {{ range .Items}}
+                          <tr>
+                            <td class="py-1" width="50px"><a href="/bestiary/{{.ID}}"><i class="text-success">{{.Level}}</i> <i class="xa xa-trophy"></i><i class="xa xa-monster-skull text-danger"></i></a></td>
+                            <td width="50px"><img class="mx-auto d-block rounded" style="padding: 1px; margin: 3px; background-color: #2c2e33" src="/assets/img/item_icons/item_{{.Icon}}.png"/></td>
+                            <td><a href="/item/{{.ID}}">{{.Name}}</a></td>
+                            <td>Summary of item here</td>
+                            </a>
+                        {{end}}                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>          
+{{ end }}

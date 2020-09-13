@@ -4,22 +4,27 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+	"sync"
 
 	"github.com/jbsmith7741/toml"
 	"github.com/jinzhu/gorm"
 	"github.com/rs/zerolog"
 )
 
-// DB represents a gorm DB
-var DB *gorm.DB
-
-// ContentDB represents a content gorm DB
-var ContentDB *gorm.DB
+var (
+	mutex sync.RWMutex
+	// DB represents a gorm DB
+	DB *gorm.DB
+	// ContentDB represents a content gorm DB
+	ContentDB    *gorm.DB
+	globalConfig Config
+)
 
 // Config wraps all configuration options
 type Config struct {
 	IsDebugMode     bool     `toml:"debug" desc:"Enable debug mode"`
 	IsDevMode       bool     `toml:"dev" desc:"Run in deveopment mode"`
+	Title           string   `toml:"title" desc:"default title name"`
 	Host            string   `toml:"host" desc:"host to listen on, e.g. :80"`
 	Database        Database `toml:"database" desc:"database"`
 	ContentDatabase Database `toml:"content_database" desc:"database"`
@@ -106,6 +111,7 @@ func New() (*Config, error) {
 		return nil, fmt.Errorf("verify: %w", err)
 	}
 
+	globalConfig = cfg
 	return &cfg, nil
 }
 
@@ -126,4 +132,12 @@ func getDefaultConfig() *Config {
 // Verify config options
 func (c *Config) Verify() error {
 	return nil
+}
+
+// Title is title of site
+func Title() string {
+	mutex.RLock()
+	title := globalConfig.Title
+	mutex.RUnlock()
+	return title
 }

@@ -1,0 +1,89 @@
+{{ define "content" }}
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> {{.Item.Name }} </h3> <img class="mx-auto d-block" alt="{{.Item.Name}}" src="/assets/img/objects/CTN_{{.Item.IdfileClean}}.png"/>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Database</a></li>
+				  <li class="breadcrumb-item"><a href="/bestiary/">Bestiary</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{.Item.Name }}</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+			  <div class="col-lg-8 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      {{.Description}}                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="col-lg-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+
+					<table class="table">
+                        <tbody>
+							{{/*<tr><td>Level: <i class="text-warning">{{.Item.Level}}</i></td></tr>
+							<tr><td>HP: <i class="text-warning">{{.Item.Hp}}</i>, Regen: <i class="text-success">{{.Item.HpRegenRate}}</i></td></tr>
+							<tr><td>Damage: <i class="text-danger">{{.Item.Mindmg}}-{{.Item.Maxdmg}}</i></td></tr>
+							<tr><td>Class: <i class="xa {{.Item.ClassIcon}} text-danger"></i> {{.Item.ClassName}}</td></tr>
+							<tr><td>Race: <a href="#"><i class="xa {{.Item.RaceIcon}}"></i></a> {{.Item.RaceName}}</td></tr>	
+              */}}
+						</tbody>
+					</table>
+                    </div>
+                  </div>
+                </div>
+              </div>    	
+
+              <div class="col-md-12 col-xl-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Spells</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>				
+              </div>
+			  <div class="col-md-12 col-xl-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Items</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>				
+              </div>
+			  <div class="col-md-12 col-xl-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Factions</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>				
+              </div>
+
+
+            </div>
+          </div>          
+{{ end }}

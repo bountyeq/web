@@ -43,10 +43,12 @@ func List(c *gin.Context) {
 		c.Error(fmt.Errorf("find NpcTypes: %w", err))
 		return
 	}
+	site := site.Fetch()
+	site.Title = "Bestiary List"
 	c.HTML(http.StatusOK, "bestiary_list.tmpl", gin.H{
 		"Title": "BountyEQ",
 		"Npcs":  npcs,
-		"Site":  site.Fetch(),
+		"Site":  site,
 	})
 }
 
@@ -161,14 +163,15 @@ func getBestiary(c *gin.Context, strID string) error {
 		description += fmt.Sprintf("<p>%s has a drop pool of %d total items%s.</p>", npc.Name, len(items), rare)
 	}
 
+	site := site.Fetch()
+	site.Title = sanitize.CleanName(npc.Name)
 	c.HTML(http.StatusOK, "bestiary_view.tmpl", gin.H{
-		"Title":       sanitize.CleanName(npc.Name),
 		"Npc":         npc,
 		"Spells":      spells,
 		"Factions":    factions,
 		"Items":       items,
 		"Description": template.HTML(description),
-		"Site":        site.Fetch(),
+		"Site":        site,
 	})
 	return nil
 }

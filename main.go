@@ -16,6 +16,8 @@ import (
 	"github.com/bountyeq/web/bounty"
 	"github.com/bountyeq/web/character"
 	"github.com/bountyeq/web/config"
+	"github.com/bountyeq/web/item"
+	"github.com/bountyeq/web/search"
 	"github.com/bountyeq/web/site"
 	"github.com/gin-contrib/logger"
 	"github.com/gin-contrib/multitemplate"
@@ -49,14 +51,14 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 		return fmt.Errorf("config: %w", err)
 	}
 
-	db, err := gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s", cfg.Database.Username, cfg.Database.Password, cfg.Database.Host, cfg.Database.Database))
+	db, err := gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", cfg.Database.Username, cfg.Database.Password, cfg.Database.Host, cfg.Database.Database))
 	if err != nil {
 		return fmt.Errorf("gorm open: %w", err)
 	}
 	config.DB = db
 	db.LogMode(true)
 
-	contentdb, err := gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s", cfg.ContentDatabase.Username, cfg.ContentDatabase.Password, cfg.ContentDatabase.Host, cfg.ContentDatabase.Database))
+	contentdb, err := gorm.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", cfg.ContentDatabase.Username, cfg.ContentDatabase.Password, cfg.ContentDatabase.Host, cfg.ContentDatabase.Database))
 	if err != nil {
 		return fmt.Errorf("gorm open contentDB: %w", err)
 	}
@@ -114,6 +116,7 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 
 	characterGroup := r.Group("/character")
 	characterGroup.GET("/", character.Get)
+
 	bestiaryGroup := r.Group("/bestiary")
 	bestiaryGroup.GET("/", bestiary.List)
 	bestiaryGroup.GET("/:id", bestiary.List)
@@ -128,6 +131,14 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 	bountyGroup := r.Group("/bounty")
 	bountyGroup.GET("/", bounty.List)
 	bountyGroup.GET("/:id", bounty.List)
+
+	itemGroup := r.Group("/item")
+	itemGroup.GET("/", item.List)
+	itemGroup.GET("/:id", item.List)
+
+	searchGroup := r.Group("/search")
+	searchGroup.GET("/", search.List)
+	searchGroup.GET("/:id", search.List)
 
 	/*authorized := r.Group("/account")
 	authorized.Use(AuthRequired()) {
