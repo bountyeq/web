@@ -1,10 +1,14 @@
 VERSION: 0.1.0
-
+.PHONY: sandbox
+sandbox:
+	@# if this fails use go get -u github.com/cosmtrek/air
+	@air
 .PHONY: db-up
 db-up:
 	@# I delete tmp/ so that the initializer scripts don't happen again
 	@-rm -rf tmp/
 	@docker-compose up -d
+
 .PHONY: db-init
 db-init:
 	@echo "Priming a fresh database"

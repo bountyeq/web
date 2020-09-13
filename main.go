@@ -61,7 +61,6 @@ func run(ctx context.Context, cancel context.CancelFunc) error {
 	}
 	config.ContentDB = contentdb
 	contentdb.LogMode(true)
-
 	//dao.DB = db
 
 	/*dao.Logger = func(ctx context.Context, sql string) {
