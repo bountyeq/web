@@ -1,0 +1,1 @@
+Thanks to https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template for template
