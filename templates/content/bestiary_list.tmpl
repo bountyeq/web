@@ -19,7 +19,8 @@
                         <thead>
                           <tr>
                             <th> Info </th>
-                            <th> Name </th>
+                            <th> Image </th>
+                            <th> Name </th>                            
                             <th> Summary </th>
                           </tr>
                         </thead>
@@ -27,8 +28,9 @@
                         {{ range .Npcs}}
                           <tr>
                             <td class="py-1" width="50px"><a href="/bestiary/{{.ID}}"><i class="text-success">{{.Level}}</i> <i class="xa {{.RaceIcon}}"></i><i class="xa {{.ClassIcon}} text-danger"></i></a></td>
-                            <td><a href="/bestiary/{{.ID}}">{{.Name}}</a></td>
-                            <td>Brief summary</td>
+                            <td width="50px"><img class="mx-auto d-block" alt="{{.Name}}" src="/assets/img/npc_models/CTN_{{.Race}}_{{.Gender}}_{{.Texture}}_{{.Helmtexture}}.png"/></td>
+                            <td><a href="/bestiary/{{.ID}}">{{.Name}}</a></td>                            
+                            <td>Summary of NPC here</td>
                             </a>
                         {{end}}                          
                         </tbody>

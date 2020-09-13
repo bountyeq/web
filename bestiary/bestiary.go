@@ -109,6 +109,7 @@ func getBestiary(c *gin.Context, strID string) error {
 		}
 		description += ".</p>"
 	}
+
 	if npc.NpcSpellsEffectsID > 0 {
 		spellEntries := []model.NpcSpellsEffectsEntries{}
 		config.ContentDB.Where("npc_spells_effect_id = ?", npc.NpcSpellsEffectsID).Find(&spellEntries)
@@ -169,6 +170,5 @@ func getBestiary(c *gin.Context, strID string) error {
 		"Description": template.HTML(description),
 		"Site":        site.Fetch(),
 	})
-	fmt.Println("got npc", npc)
 	return nil
 }

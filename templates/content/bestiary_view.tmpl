@@ -1,7 +1,7 @@
 {{ define "content" }}
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> {{.Npc.Name }} </h3>
+              <h3 class="page-title"> {{.Npc.Name }} </h3> <img class="mx-auto d-block" alt="{{.Npc.Name}}" src="/assets/img/npc_models/CTN_{{.Npc.Race}}_{{.Npc.Gender}}_{{.Npc.Texture}}_{{.Npc.Helmtexture}}.png"/>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="/">Database</a></li>
@@ -15,7 +15,8 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive">
-                      {{.Description}}
+                      {{.Description}}                      
+                    
                     </div>
                   </div>
                 </div>
@@ -24,6 +25,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive">
+
 					<table class="table">
                         <tbody>
 							<tr><td>Level: <i class="text-warning">{{.Npc.Level}}</i></td></tr>
@@ -59,7 +61,7 @@
                     <div class="table-responsive">
                       <table class="table">
                         <tbody>
-                        {{range .Items}}<tr><td></td><td><a href="/item/{{.ID}}">{{.Name}}</a></td></tr>{{end}}
+                        {{range .Items}}<tr><td><img class="mx-auto d-block rounded" style="padding: 1px; margin: 3px; background-color: #2c2e33" src="/assets/img/item_icons/item_{{.Icon}}.png"/></td><td><a href="/item/{{.ID}}">{{.Name}}</a></td></tr>{{end}}
                         </tbody>
                       </table>
                     </div>
