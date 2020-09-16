@@ -1,3 +1,4 @@
+NAME := web
 VERSION := 0.1.0
 .PHONY: sandbox
 sandbox:
@@ -10,7 +11,7 @@ db-up:
 	@docker-compose up -d
 .PHONY: build-linux
 build-linux:
-	@GOOS=linux GOARCH=amd64 go build -o bin/web-linux-${VERSION}x64
+	@GOOS=linux GOARCH=amd64 go build -ldflags="-X main.Version=${VERSION} -s -w" -o bin/${NAME}-${VERSION}-linux-x64 main.go	
 .PHONY: db-init
 db-init:
 	@echo "Priming a fresh database"
@@ -59,6 +60,6 @@ npm-install:
 	@(docker run --rm -v ${PWD}:/src -it xackery/webbuild:10.19.0 bash -c 'npm install')
 .PHONY: sync
 sync: build-linux
-	@rsync -ru assets/ dungeoneq.com:~/server/web/assets/
-	@rsync -ru templates/ dungeoneq.com:~/server/web/templates/
-	@scp bin/web-linux-x64 dungeoneq.com:~/server/web
+	@rsync -avn assets/ dungeoneq.com:~/server/web/assets/
+	@rsync -avn --delete templates/ dungeoneq.com:~/server/web/templates/
+	@scp bin/${NAME}-${VERSION}-linux-x64 dungeoneq.com:~/server/web/${NAME}-linux-x64

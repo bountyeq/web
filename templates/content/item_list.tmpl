@@ -14,6 +14,13 @@
                 <div class="card">
                   <div class="card-body">
                     <p class="card-description">Use search to look for specific creatures</p>
+                    <nav>
+                      <ul class="pagination">
+                        {{if ne .Site.Page.PreviousDisplay ""}}<li class="page-item"><a class="page-link" href="{{.Site.Page.Previous}}">Previous</a></li>{{end}}
+                        <li class="page-item"><a class="page-link" href="#">{{.Site.Page.CurrentDisplay}}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{.Site.Page.Next}}">Next</a></li>
+                      </ul>
+                    </nav>
                     <div class="table-responsive">
                       <table class="table table-striped">
                         <thead>
@@ -37,6 +44,13 @@
                       </table>
                     </div>
                   </div>
+                  <nav>
+                      <ul class="pagination">
+                        {{if ne .Site.Page.PreviousDisplay ""}}<li class="page-item"><a class="page-link" href="{{.Site.Page.Previous}}">Previous</a></li>{{end}}
+                        <li class="page-item"><a class="page-link" href="#">{{.Site.Page.CurrentDisplay}}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{.Site.Page.Next}}">Next</a></li>
+                      </ul>
+                    </nav>
                 </div>
               </div>    
             </div>

@@ -1536,7 +1536,7 @@ func RaceIcon(raceID uint32) string {
 	case 43:
 		return "xa-octopus" //"Bear"
 	case 44:
-		return "xa-octopus" //"Guard"
+		return "xa-knight-helmet" //"Guard"
 	case 45:
 		return "xa-octopus" //"Demi Lich"
 	case 46:
@@ -1660,7 +1660,7 @@ func RaceIcon(raceID uint32) string {
 	case 105:
 		return "xa-octopus" //"Swordfish"
 	case 106:
-		return "xa-octopus" //"Guard"
+		return "xa-knight-helmet" //"Guard"
 	case 107:
 		return "xa-octopus" //"Mammoth"
 	case 108:
@@ -1672,7 +1672,7 @@ func RaceIcon(raceID uint32) string {
 	case 111:
 		return "xa-octopus" //"Harpy"
 	case 112:
-		return "xa-octopus" //"Guard"
+		return "xa-knight-helmet" //"Guard"
 	case 113:
 		return "xa-octopus" //"Drixie"
 	case 114:
@@ -1922,7 +1922,7 @@ func RaceIcon(raceID uint32) string {
 	case 238:
 		return "xa-octopus" //"Vah Shir"
 	case 239:
-		return "xa-octopus" //"Guard"
+		return "xa-knight-helmet" //"Guard"
 	case 240:
 		return "xa-octopus" //"Teleport Man"
 	case 241:
@@ -1946,13 +1946,13 @@ func RaceIcon(raceID uint32) string {
 	case 250:
 		return "xa-octopus" //"Banshee"
 	case 251:
-		return "xa-octopus" //"Guard of Justice"
+		return "xa-knight-helmet" //"Guard of Justice"
 	case 252:
 		return "xa-octopus" //"Mini POM"
 	case 253:
 		return "xa-octopus" //"Diseased Fiend"
 	case 254:
-		return "xa-octopus" //"Solusek Ro Guard"
+		return "xa-knight-helmet" //"Solusek Ro Guard"
 	case 255:
 		return "xa-octopus" //"Bertoxxulous"
 	case 256:

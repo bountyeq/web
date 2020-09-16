@@ -30,14 +30,34 @@ func List(c *gin.Context) {
 		}
 		return
 	}
+	page := 1
+	pageStr, ok := c.GetQuery("page")
+	if ok {
+		page, err = strconv.Atoi(pageStr)
+		if err != nil {
+			page = 1
+		}
+	}
+	if page < 1 {
+		page = 1
+	}
+	limit := 10
+
 	items := []model.Items{}
-	err = config.ContentDB.Limit(10).Find(&items).Error
+	err = config.ContentDB.Limit(limit).Offset(limit*page - 1).Find(&items).Error
 	if err != nil {
 		c.Error(fmt.Errorf("find Items: %w", err))
 		return
 	}
 	site := site.Fetch()
 	site.Title = "Item List"
+	previousDisplay := fmt.Sprintf("%d", page-1)
+	previous := fmt.Sprintf("/item?page=%s", previousDisplay)
+	if page == 1 {
+		previous = ""
+		previousDisplay = ""
+	}
+	site.Page.Generate("/item", "Start", previous, previousDisplay, fmt.Sprintf("%d", page), fmt.Sprintf("/item?page=%d", page+1), fmt.Sprintf("%d", page+1))
 	c.HTML(http.StatusOK, "item_list.tmpl", gin.H{
 		"Title": "BountyEQ",
 		"Items": items,

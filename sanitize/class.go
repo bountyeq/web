@@ -37,6 +37,8 @@ func ClassIcon(classID uint32) string {
 		return "xa-pawprint" //beastlord
 	case 16:
 		return "xa-axe" //ber
+	case 41:
+		return "xa-capitol" //shopkeeper
 	}
 	return "xa-help"
 }

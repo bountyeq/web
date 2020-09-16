@@ -14,12 +14,17 @@
                 <div class="card">
                   <div class="card-body">
                     <p class="card-description">Use search to look for specific creatures</p>
+                    <nav>
+                      <ul class="pagination">
+                        {{if ne .Site.Page.PreviousDisplay ""}}<li class="page-item"><a class="page-link" href="{{.Site.Page.Previous}}">Previous</a></li>{{end}}
+                        <li class="page-item"><a class="page-link" href="#">{{.Site.Page.CurrentDisplay}}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{.Site.Page.Next}}">Next</a></li>
+                      </ul>
+                    </nav>
                     <div class="table-responsive">
                       <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th> Info </th>
-                            <th> Image </th>
                             <th> Name </th>                            
                             <th> Summary </th>
                           </tr>
@@ -27,15 +32,27 @@
                         <tbody>
                         {{ range .Npcs}}
                           <tr>
-                            <td class="py-1" width="50px"><a href="/bestiary/{{.ID}}"><i class="text-success">{{.Level}}</i> <i class="xa {{.RaceIcon}}"></i><i class="xa {{.ClassIcon}} text-danger"></i></a></td>
-                            <td width="50px"><img class="mx-auto d-block" alt="{{.Name}}" src="/assets/img/npc_models/CTN_{{.Race}}_{{.Gender}}_{{.Texture}}_{{.Helmtexture}}.png"/></td>
-                            <td><a href="/bestiary/{{.ID}}">{{.Name}}</a></td>                            
-                            <td>Summary of NPC here</td>
+                            <td width="30px">
+                              <a href="/bestiary/{{.ID}}"><div class="text-center">{{.CleanName}}<br><br>
+                              <img style="height: 100%" class="img-fluid mx-auto d-block" alt="{{.CleanName}}" src="/assets/img/npc_models/CTN_{{.Race}}_{{.Gender}}_{{.Texture}}_{{.Helmtexture}}.png"/>
+                              </div></a>
+                            </td>
+                            
+                            <td><a href="/bestiary/{{.ID}}"><span class="text-success">{{.Level}}</span> {{.RaceName}} <i class="xa {{.RaceIcon}}"></i> <span style="color: purple">{{.ClassName}} <i class="xa {{.ClassIcon}}"></i></span> </a></td>
                             </a>
-                        {{end}}                          
+                        {{end}}
                         </tbody>
                       </table>
                     </div>
+                  </div>
+                  <div class="card-footer">
+                  <nav>
+                    <ul class="pagination">
+                      {{if ne .Site.Page.PreviousDisplay ""}}<li class="page-item"><a class="page-link" href="{{.Site.Page.Previous}}">Previous</a></li>{{end}}
+                      <li class="page-item"><a class="page-link" href="#">{{.Site.Page.CurrentDisplay}}</a></li>
+                      <li class="page-item"><a class="page-link" href="{{.Site.Page.Next}}">Next</a></li>
+                    </ul>
+                  </nav>
                   </div>
                 </div>
               </div>    

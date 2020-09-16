@@ -37,14 +37,33 @@ func List(c *gin.Context) {
 		}
 		return
 	}
+	page := 1
+	pageStr, ok := c.GetQuery("page")
+	if ok {
+		page, err = strconv.Atoi(pageStr)
+		if err != nil {
+			page = 1
+		}
+	}
+	if page < 1 {
+		page = 1
+	}
+	limit := 10
 	npcs := []model.NpcTypes{}
-	err = config.ContentDB.Limit(10).Find(&npcs).Error
+	err = config.ContentDB.Limit(limit).Offset(limit*page - 1).Find(&npcs).Error
 	if err != nil {
 		c.Error(fmt.Errorf("find NpcTypes: %w", err))
 		return
 	}
 	site := site.Fetch()
 	site.Title = "Bestiary List"
+	previousDisplay := fmt.Sprintf("%d", page-1)
+	previous := fmt.Sprintf("/bestiary?page=%s", previousDisplay)
+	if page == 1 {
+		previous = ""
+		previousDisplay = ""
+	}
+	site.Page.Generate("/bestiary", "Start", previous, previousDisplay, fmt.Sprintf("%d", page), fmt.Sprintf("/bestiary?page=%d", page+1), fmt.Sprintf("%d", page+1))
 	c.HTML(http.StatusOK, "bestiary_list.tmpl", gin.H{
 		"Title": "BountyEQ",
 		"Npcs":  npcs,

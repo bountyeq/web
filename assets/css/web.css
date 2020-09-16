@@ -23654,6 +23654,7 @@ body.avgrund-active {
 }
 .jsgrid .jsgrid-pager {
   line-height: 2;
+  border-top: 1px solid #2c2e33;
 }
 .jsgrid .jsgrid-pager-current-page {
   padding: 0.5rem 0.75rem;

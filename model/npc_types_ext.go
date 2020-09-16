@@ -9,6 +9,11 @@ func (n *NpcTypes) Description() string {
 	return "Test"
 }
 
+// CleanName returns a clean version of a NPC's name
+func (n *NpcTypes) CleanName() string {
+	return sanitize.CleanName(n.Name)
+}
+
 // ClassName returns a class's name
 func (n *NpcTypes) ClassName() string {
 	return sanitize.ClassName(n.Class)
